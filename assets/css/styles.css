@@ -2,6 +2,9 @@
     height: 300px;
     width: auto;
 }
-.logoPosition{
+.logoPositionHome{
     padding-top: 3rem;
+}
+.logoPositionAbout{
+    padding-top: 1rem;
 }
