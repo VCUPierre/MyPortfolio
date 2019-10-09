@@ -18,7 +18,7 @@ $(document).on("click", ".logo", function(){
     $("#home").removeClass("d-none");
 })
 function getGithubRepos(){
-    let gitArray = ['GifTastic', 'TriviaGame','Responsive-Portfolio','WordGuessGame','DeliveryBusinessWebConcept', 'localRestaurantWebConcept'];
+    let gitArray = ['GifTastic', 'TriviaGame','Responsive-Portfolio','WordGuessGame','DeliveryBusinessWebConcept', 'LocalRestaurantWebConcept'];
     $.ajax({
         url: 'https://api.github.com/users/vcuPierre/repos?type=owner&sort=created',
         method: "GET"
@@ -45,7 +45,7 @@ function addGithubRepos(results){
         let projectDescDiv = $("<div>", {class: "description"});
         let projectLangDiv = $("<div>", {class: "lang"});
         let projectButton = $("<a>", {href: results[i].html_url, class: "btn btn-outline-success"});
-        let projectImg = $("<img>", {src: "assets/imgs&Files/IMG_1708.JPG", alt: " ", class: "logo"});
+        let projectImg = $("<img>", {src: getImgPath(results[i].name), alt: " ", class: "imgSize"});
         projectTitleDiv.append($("<h3>").text(results[i].name));
         projectDescDiv.append($("<h4>").text(results[i].description));
         projectLangDiv.append($("<h5>").text(results[i].language));
@@ -55,5 +55,18 @@ function addGithubRepos(results){
         rowDiv.append(leftDiv, rightDiv);
         mainDiv.append(rowDiv, $("<hr>"));
         mainDiv.appendTo(htmlHolder);
+    }
+
+    function getImgPath(imgName) {
+        // created an object literal to reference path to img related to project
+        const imgs = {
+            'GifTastic': 'assets/imgs&Files/giphy.png',
+            'TriviaGame': 'assets/imgs&Files/trivia.jpg',
+            'Responsive-Portfolio': 'something',
+            'WordGuessGame': 'assets/imgs&Files/hangman.png',
+            'DeliveryBusinessWebConcept': 'something',
+            'LocalRestaurantWebConcept': 'something'
+        }
+        return imgs[imgName];
     }
 }
