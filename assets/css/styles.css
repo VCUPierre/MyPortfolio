@@ -8,3 +8,11 @@
 .logoPositionAbout{
     padding-top: 1rem;
 }
+body{
+    background-image: url('../imgs&Files/bg.jpg');
+    /*linear-gradient: (182deg, rgba(255, 152, 0, 0.33) 5%, #8bc34a94)
+    */
+    background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
