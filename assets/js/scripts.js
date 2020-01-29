@@ -17,6 +17,9 @@ $(document).on("click", ".logo", function(){
     $("#portfolio").addClass("d-none");
     $("#home").removeClass("d-none");
 })
+function moveImg(){
+
+}
 function getGithubRepos(){
     let gitArray = ['GifTastic', 'TriviaGame','Responsive-Portfolio','WordGuessGame','DeliveryBusinessWebConcept', 'LocalRestaurantWebConcept'];
     $.ajax({
@@ -62,10 +65,10 @@ function addGithubRepos(results){
         const imgs = {
             'GifTastic': 'assets/imgs&Files/giphy.png',
             'TriviaGame': 'assets/imgs&Files/trivia.jpg',
-            'Responsive-Portfolio': 'something',
+            'Responsive-Portfolio': 'assets/imgs&Files/port.jpg',
             'WordGuessGame': 'assets/imgs&Files/hangman.png',
-            'DeliveryBusinessWebConcept': 'something',
-            'LocalRestaurantWebConcept': 'something'
+            'DeliveryBusinessWebConcept': 'assets/imgs&Files/Aces_logo2.png',
+            'LocalRestaurantWebConcept': 'assets/imgs&Files/KtownS.png'
         }
         return imgs[imgName];
     }
